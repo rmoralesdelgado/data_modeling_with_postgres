@@ -1,15 +1,13 @@
 # Data Modeling with Postgres
----
 
 ### Project for Udacity's Data Engineering Nanodegree
-
-### By Raul Morales Delgado.
+By Raul Morales Delgado.
 
 ## Objective
 The objective of this project is to model user activity data to create a database and ETL pipeline in Postgres and Python for a music streaming app.
 
 ## Scope
-In this project, data from two different sources — namely, song data and log data — from a fictional company, Sparkify, will be modeled into a STAR schema facilitate downstream analytics user behavior. To do so, a database schema will be created based on fact and dimension tables, and a an ETL pipeline will be develop to ingest and normalize their data.
+In this project, data from two different sources — namely, song data and log data — from a fictional company, Sparkify, will be modeled into a STAR schema to facilitate downstream analytics user behavior. To do so, a database schema will be created based on fact and dimension tables, and an ETL pipeline will be develop to ingest, normalize their data and load it back to the database.
 
 ## Schema
 As stated above, a STAR schema has been chosen for this database's schema design. Given the requirement by Sparkify to be able to simplify queries related to user behavior — e.g. what they are listening —, and given the proposed tables that they would be needing — one fact table with songs played and several dimensional ones with user, artist and so on data — a STAR schema solution satisfies the problem's contraints.
@@ -61,8 +59,11 @@ The `notebooks` directory contains the Jupyter notebooks of this project and, fi
 
 
 ## Run Local
-To run this project locally, clone this repository and start a local Postgres server. Then run:
+To run this project locally, clone this repository and start a local Postgres server. 
+
+Then, run:
 ```bash
 python3 main.py
 ````
 
+The `main.py` file will create the database, schema and run the ETL pipeline. 
