@@ -16,10 +16,23 @@ As stated above, a STAR schema has been chosen for this database's schema design
 
 The STAR schema proposed for this database is shown below.
 
-![ERD — STAR Schema](https://github.com/XXXXXXXX "Entity Relationship Diagram — STAR Schema")
+<img src='https://github.com/rmoralesdelgado/data_modeling_with_postgres/blob/main/extras/ERD.png' alt="ERD — STAR Schema" width=700>
 
 ## ETL Pipeline
+In this section, the ETL pipeline will be explained.
 
+### Creation of database
+The first step in this pipeline is dropping a previously existing `sparkifydb` database and creating a new one. This process is described in `src/create_tables.py`'s `create_database` function.
+
+### Creation of schema
+The next step consists on creating the schema. This STAR schema consists of five tables — one fact and four dimensional ones. First, any preexisting tables are dropped and then a new set is created.
+
+This process is described in `src/create_tables.py`'s `create_tables` and `drop_tables` functions.
+
+### ETL
+The ETL processes are described in `src/etl.py`. From a high-level, this module defines functions to extract the data from the data files and transforms these data for each of the tables previously mentioned.
+
+Finally, the transformed data is loaded back into the tables at `sparkifydb` database.
 
 ## Project Structure
 The structure of this project is depicted in the following directory tree:
